@@ -6,8 +6,8 @@ public class PersistanceManager : MonoBehaviour
 {
     public static PersistanceManager instance;         //Convierte en clase accesible en todo el proyecto
 
-    public string PlayerName;
-
+    public string currentPlayer;
+    public string highScorePlayer;
     public int Score;
 
     //Método predefinido de Unity cargado solo la primera vez que se instancia la clase, sin importar si la escena es loaded or reloaded múltiples veces

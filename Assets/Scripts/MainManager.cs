@@ -74,6 +74,23 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
-        gameOverText.text = "Best Score: ";
+        gameOverText.text = "Best Score: " + ScoreCompare(m_Points);
+        
     }
+
+    public string ScoreCompare(int score)
+    {
+        if(score > PersistanceManager.instance.Score)
+        {
+            PersistanceManager.instance.Score = m_Points;
+            PersistanceManager.instance.highScorePlayer = PersistanceManager.instance.currentPlayer;
+            return PersistanceManager.instance.currentPlayer + " " + score.ToString();
+        } 
+        
+        else
+        {
+            return PersistanceManager.instance.highScorePlayer + " " + PersistanceManager.instance.Score.ToString();
+        }
+    }
+
 }
