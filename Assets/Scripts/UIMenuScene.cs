@@ -9,20 +9,12 @@ using UnityEngine.UI;
 public class UIMenuScene : MonoBehaviour
 {
 
-    public TMP_InputField inputField;       //Gets current player name from input field
-    public string currentName;              //Stores current player name to persists between scenes and sessions
+    [SerializeField] TMP_InputField inputField;       //Gets current player name from input field
 
-    // Start is called before the first frame update
-    void Start()
+  
+    public void SetPlayerName(string playerName)
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        currentName = inputField.text;
-
+        PersistanceManager.instance.PlayerName = inputField.text;
     }
 
     public void GoToGameScene()

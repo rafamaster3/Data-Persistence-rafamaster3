@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PersistenceManager : MonoBehaviour
+public class PersistanceManager : MonoBehaviour
 {
-    public static PersistenceManager instance;         //Convierte en clase accesible en todo el proyecto
+    public static PersistanceManager instance;         //Convierte en clase accesible en todo el proyecto
 
-    public string playerName;
+    public string PlayerName;
 
-    public int highScore;
+    public int Score;
 
     //Método predefinido de Unity cargado solo la primera vez que se instancia la clase, sin importar si la escena es loaded or reloaded múltiples veces
     private void Awake()
     {
+
+
 
         //Destruye duplicados de MainManager object y evita que el original sea destruido al cambiar de escena
         if (instance != null)
@@ -26,6 +28,5 @@ public class PersistenceManager : MonoBehaviour
 
     }
 
-   
 }
 
