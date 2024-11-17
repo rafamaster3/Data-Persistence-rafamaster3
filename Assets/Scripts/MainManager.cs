@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -47,7 +48,7 @@ public class MainManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 m_Started = true;
-                float randomDirection = Random.Range(-1.0f, 1.0f);
+                float randomDirection = UnityEngine.Random.Range(-1.0f, 1.0f);
                 Vector3 forceDir = new Vector3(randomDirection, 1, 0);
                 forceDir.Normalize();
 
@@ -75,21 +76,21 @@ public class MainManager : MonoBehaviour
         m_GameOver = true;
         GameOverText.SetActive(true);
         gameOverText.text = "Best Score: " + ScoreCompare(m_Points);
-        
+        PersistanceManager.instance.SaveGameData();        
     }
 
     public string ScoreCompare(int score)
     {
-        if(score > PersistanceManager.instance.Score)
+        if(score > PersistanceManager.instance.highScore)
         {
-            PersistanceManager.instance.Score = m_Points;
+            PersistanceManager.instance.highScore = m_Points;
             PersistanceManager.instance.highScorePlayer = PersistanceManager.instance.currentPlayer;
             return PersistanceManager.instance.currentPlayer + " " + score.ToString();
         } 
         
         else
         {
-            return PersistanceManager.instance.highScorePlayer + " " + PersistanceManager.instance.Score.ToString();
+            return PersistanceManager.instance.highScorePlayer + " " + PersistanceManager.instance.highScore.ToString();
         }
     }
 
