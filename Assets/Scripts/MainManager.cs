@@ -76,21 +76,21 @@ public class MainManager : MonoBehaviour
         m_GameOver = true;
         GameOverText.SetActive(true);
         gameOverText.text = "Best Score: " + ScoreCompare(m_Points);
-        PersistanceManager.instance.SaveGameData();        
+        PersistenceManager.instance.SaveGameData();        
     }
 
     public string ScoreCompare(int score)
     {
-        if(score > PersistanceManager.instance.highScore)
+        if(score > PersistenceManager.instance.highScore)
         {
-            PersistanceManager.instance.highScore = m_Points;
-            PersistanceManager.instance.highScorePlayer = PersistanceManager.instance.currentPlayer;
-            return PersistanceManager.instance.currentPlayer + " " + score.ToString();
+            PersistenceManager.instance.highScore = m_Points;
+            PersistenceManager.instance.highScorePlayer = PersistenceManager.instance.currentPlayer;
+            return PersistenceManager.instance.currentPlayer + " " + score.ToString();
         } 
         
         else
         {
-            return PersistanceManager.instance.highScorePlayer + " " + PersistanceManager.instance.highScore.ToString();
+            return PersistenceManager.instance.highScorePlayer + " " + PersistenceManager.instance.highScore.ToString();
         }
     }
 

@@ -14,7 +14,7 @@ public class UIMenuScene : MonoBehaviour
   
     public void SetPlayerName(string playerName)
     {
-        PersistanceManager.instance.currentPlayer = inputField.text;
+        PersistenceManager.instance.currentPlayer = inputField.text;
     }
 
     public void GoToGameScene()

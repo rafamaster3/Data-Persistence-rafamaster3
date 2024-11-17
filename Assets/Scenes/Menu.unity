@@ -669,7 +669,7 @@ GameObject:
   - component: {fileID: 1113063837}
   - component: {fileID: 1113063836}
   m_Layer: 0
-  m_Name: PersistanceManager
+  m_Name: PersistenceManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -689,7 +689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentPlayer: 
   highScorePlayer: 
-  Score: 0
+  highScore: 0
 --- !u!4 &1113063837
 Transform:
   m_ObjectHideFlags: 0

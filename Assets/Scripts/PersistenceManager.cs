@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class PersistanceManager : MonoBehaviour
+public class PersistenceManager : MonoBehaviour
 {
-    public static PersistanceManager instance;         //Convierte en clase accesible en todo el proyecto
+    public static PersistenceManager instance;         //Convierte en clase accesible en todo el proyecto
 
     public string currentPlayer;
     public string highScorePlayer;
